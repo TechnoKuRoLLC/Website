@@ -1,0 +1,1627 @@
+/* リセットCSS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Manrope", "Noto Sans JP", Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #000;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h2{
+  font-family: "Black Ops One", Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #fff;
+}
+/* Lenisのスムーススクロール用スタイル */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* スクロールバーの設定を修正 */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.fp-overflow::-webkit-scrollbar,
+.section::-webkit-scrollbar,
+.container::-webkit-scrollbar,
+.news-list::-webkit-scrollbar,
+.service-section .container::-webkit-scrollbar,
+.activity-section .container::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+.fp-overflow::-webkit-scrollbar-thumb,
+.section::-webkit-scrollbar-thumb,
+.container::-webkit-scrollbar-thumb,
+.news-list::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.5);
+  border-radius: 10px;
+}
+
+html,
+body {
+  scrollbar-width: thin;
+  -ms-overflow-style: auto;
+}
+
+/* 共通スタイル */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #fcd100;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  /* display: block; */
+  object-fit: cover;
+  object-position: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  /* padding: 0 20px; */
+  position: relative;
+}
+
+
+
+
+/* カスタムカーソル */
+.cursor {
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(252, 209, 0, 0.7);
+  z-index: 1000;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+  mix-blend-mode: difference;
+  opacity: 0;
+}
+
+.cursor.cursor-dark {
+  background-color: rgba(252, 209, 0, 0.7);
+}
+
+.cursor.cursor-light {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.cursor.cursor--hover {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(252, 209, 0, 0.5);
+}
+
+/* ヘッダー */
+/* ヘッダーの z-index を確認 */
+.desktop-header,
+.mobile-header {
+    z-index: 100; /* サイドバーより手前に */
+}
+
+
+.desktop-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px !important;
+  z-index: 100;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.3); /* 半透明の背景を追加 */
+  backdrop-filter: blur(5px); /* ぼかし効果を追加 */
+  border-bottom: 1px solid #333;
+
+}
+
+.desktop-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.logo-circle:hover {
+  transform: scale(1.1);
+}
+
+.logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fcd100;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-number {
+  color: #fcd100;
+  font-size: 1.2rem;
+}
+
+/* モバイルヘッダー */
+
+
+.mobile-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  /* display: none; */
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  /* backdrop-filter: blur(10px); */
+}
+
+
+.mobile-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* .menu-btn {
+  background: none;
+  border: none;
+  color: #FCD100;
+  cursor: pointer;
+  padding: 5px;
+} */
+
+/* === メニュー開閉ボタン === */
+.menu-btn {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  z-index: 999;
+}
+
+/* 各線のスタイル */
+.menu-line {
+  width: calc(100% - 11%);
+  height: 3px;
+  background-color: #fcd100;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 999;
+}
+
+/* アクティブ状態でバツ(×)に変形 */
+.menu-btn.active .menu-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.active .menu-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active .menu-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+
+
+
+/* ハンバーガーメニュー */
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 888;
+  display: none;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+  background-image:
+    linear-gradient(#000000ef, #141414e5),
+  /* ベース色 */
+  url(./img/noise.png);
+/* ノイズ画像 */
+background-repeat: repeat;
+/* 繰り返し */
+background-size: 400px;
+/* ノイズパターンのサイズ調整 */
+}
+
+
+.hamburger-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.hamburger-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 6rem;
+  cursor: pointer;
+}
+
+.hamburger-nav {
+  flex: 1;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Black Ops One', cursive;
+  letter-spacing: 2px;
+}
+
+.hamburger-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+.hamburger-nav a {
+  font-size: clamp(2rem, 6vw, 6rem);
+  font-weight: bold;
+  display: block;
+  padding: 10px 0;
+  transition: color 0.3s;
+}
+
+.hamburger-nav a:hover {
+  color: #fcd100;
+  -webkit-text-stroke: 0.5px #fff;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.hamburger-footer {
+  margin-top: 40px;
+}
+
+.follow-text {
+  font-size: 1.6rem;
+  color: #aaa;
+  margin-bottom: 10px;
+  display: block;
+  color: #fff;
+  font-family: 'Black Ops One', cursive;
+  letter-spacing: 2px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* モバイルナビゲーション */
+.mobile-nav {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  padding: 10px 0;
+  justify-content: space-around;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  color: #aaa;
+  transition: color 0.3s;
+}
+
+.mobile-nav-item.active {
+  color: #fcd100;
+}
+
+.mobile-nav-icon {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.mobile-nav-text {
+  font-size: 1rem;
+}
+
+/* セクション共通 */
+.section {
+  height: 100vh;
+  position: relative;
+  /* overflow: auto; */
+  overflow: hidden;
+
+}
+
+/* サイドバー */
+.section-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 11% !important;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  padding-top: 160px;
+  block-size: border-box;
+
+}
+
+
+
+.dark-sidebar {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-right: #333 1px solid;
+  /* position: relative; */
+}
+
+.light-sidebar {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-right: #dadada 1px solid;
+}
+
+
+
+/* ライン */
+/* .section-line {
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  margin-bottom: 4rem;
+} */
+
+.dark-line {
+  width: calc(100% - 11%);
+  height: 1px;
+  height: 1px;
+  background-color: #333;
+  margin-bottom: 4rem;
+}
+
+.light-line {
+  width: calc(100% - 11%);
+  
+  height: 1px;
+  background-color: #dadada;
+  margin-bottom: 4rem;
+}
+
+
+.vertical-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.vertical-text.dark-text {
+  color: #000;
+}
+
+.vertical-text span {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin: 10px 0;
+}
+
+
+
+/* 6. セクション区切り線の調整 */
+.section-divider{
+  position: absolute;
+  left: 160px; /* サイドバーの幅分ずらす */
+  width: calc(100% - 160px); /* サイドバーを除いた幅 */
+  height: 1px;
+  z-index: 5; /* サイドバー(10)とコンテンツ(1)の間 */
+}
+
+.section-divider-top {
+  top: 0;
+}
+
+.section-divider-bottom {
+  bottom: 0;
+}
+
+.section-title,
+.about-title,
+.service-title,
+.news-title,
+.contact-title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 900;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+  /* padding-left: 2rem; */
+}
+
+
+/* ヒーローセクション */
+.hero-section {
+  background-color: #000;
+  /* display: flex;
+  align-items: left;
+  justify-content: flex-end; */
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px; /* ヘッダーの高さ分のパディングを追加 */
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  /* height: calc(100% - 80px); ヘッダーの高さを引いた高さに設定 */
+  padding-bottom: 10vh;
+  align-items: flex-start;
+}
+
+.hero-title {
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: left;
+  color: white;
+  font-family: "Black Han Sans", "Helvetica Neue", Arial, sans-serif;
+  text-transform: none;
+  animation: fadeIn 1s ease-out;
+  margin-top: 0; /* 上部のマージンを削除 */
+  padding-top: 70vh;
+  letter-spacing: 0.05em;
+  padding-left: 2rem;
+}
+
+.hero-subtitle {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  position: absolute;
+  right: 5vw;
+  top: 38%;
+  transform: translateY(-50%);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #fcd100;
+  letter-spacing: 0.3em;
+  line-height: 1.8;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+
+
+@keyframes arrowBounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: rotate(45deg) translateY(0);
+  }
+  40% {
+    transform: rotate(45deg) translateY(-20px);
+  }
+  60% {
+    transform: rotate(45deg) translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aboutセクション */
+
+.about-section {
+  background-color: #000;
+  /* display: flex; */
+  position: relative;
+  overflow: hidden;
+}
+
+/* .about-section .section-sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #333;
+  z-index: 10;
+} */
+
+
+
+
+.about-section .container {
+  z-index: 6; /* サイドバーより上に表示 */
+  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
+  padding-bottom: 0;
+}
+
+.about-title {
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 900;
+  padding: 6rem 6rem;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  margin-bottom: 0;
+}
+
+.about-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* height: 100%; */
+  height: calc(100vh - 200px);
+}
+
+.about-column {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.about-column:first-child {
+  border-right: 1px solid #333;
+  height: 100%;
+  display: flex;
+}
+
+.about-column-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.about-column-text {
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.about-column-image {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.about-column-image img {
+  max-height: 100px;
+  width: auto;
+}
+
+
+
+/* Serviceセクション */
+.service-section {
+  background-color: #fff;
+  color: #000;
+  /* display: flex; */
+  position: relative;
+  overflow: hidden;
+}
+
+
+.service-section .container {
+  /* height: calc(100vh - 160px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  -ms-overflow-style: auto;
+  width: calc(100% - 160px);
+  position: relative; */
+  z-index: 6; /* サイドバーより上に表示 */
+  border-bottom: 1px solid #dadada;
+  border-top: 1px solid #dadada;
+
+}
+
+.service-content {
+  flex: 1;
+  padding: 40px 20px;
+}
+
+.service-title {
+  font-size: clamp(3rem, 5vw, 6rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: 5px;
+}
+
+
+
+.service-items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  /* margin-bottom: 50px; */
+  padding-left: 160px; /* サイドバーの幅(80px) + 余白(20px) */
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.service-number {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  -webkit-text-stroke: 0.5px #333;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: bold;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Black Ops One', cursive;
+  letter-spacing: 2px;
+
+}
+
+
+
+.service-details {
+  flex: 1;
+  vertical-align: middle;
+  height: 3rem;
+  margin-bottom: 3rem;
+
+}
+
+.service-details h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  margin-bottom: 0.1rem;
+  font-weight: bold;
+}
+
+.service-details p {
+  font-size: clamp(1rem, 2vw, 2rem);
+  display: flex;
+  align-items: center;
+  height: 0.1rem;
+
+}
+
+/* .our-service {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-top: 30px;
+} */
+
+.button01{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.button02{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+
+.reverse a {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  border-radius: 3px;
+  position: relative;
+  display: inline-flex;
+  /* justify-content: space-stretch; */
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 100%;
+  width: fit-content;
+  padding: 0.7em 2.4em;
+  color: #000;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  font-family: 'Black Ops One', cursive;
+  letter-spacing: 2px;
+}
+
+.reverse a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1.5em; /* ← 右側の余白も相対値に */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s;
+  width: 0.4em; /* ← ボタンのサイズに比例する矢印サイズ */
+  height: 0.4em;
+  border-top: solid 0.2em currentColor;
+  border-right: solid 0.2em currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+
+.reverse a:hover {
+background: #000;
+color: #fff;
+}
+
+.reverse a:hover {
+  mix-blend-mode: difference;
+  -webkit-text-fill-color: inherit;
+  }
+
+
+.reverse a:hover:after {
+right: 2.5rem;
+}
+
+
+
+@media (max-width: 768px) {
+  .service-container {
+      flex-direction: column;
+  }
+  
+  .vertical-text {
+      writing-mode: horizontal-tb;
+      padding: 10px;
+      border-right: none;
+      border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .service-title {
+      font-size: 40px;
+      margin-bottom: 30px;
+  }
+  
+  .service-item {
+      flex-direction: column;
+  }
+  
+  .service-number {
+      width: 60px;
+      height: 60px;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+  }
+  
+  .service-number::before {
+      width: 50px;
+      height: 50px;
+  }
+  .fp-overflow {
+    margin-left: 0;
+  }
+  .section-sidebar {
+    display: none;
+  }
+}
+
+/* アクティビティセクション */
+.activity-section {
+  background-color: #fff;
+  color: #000;
+  /* display: flex;
+  align-items: flex-start;
+  padding-top: 80px; */
+}
+
+.activity-section .container {
+  z-index: 6; /* サイドバーより上に表示 */
+  border-bottom: 1px solid #dadada;
+  border-top: 1px solid #dadada;
+
+}
+
+
+.activity-item {
+  margin-bottom: 6rem;
+  padding-left: 100px; /* サイドバーの幅(80px) + 余白(20px) */
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.activity-image {
+  width: 38vh;
+  height: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.activity-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+.activity-content h4 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.activity-text {
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+
+
+/* ブログセクション */
+.blog-section {
+  background-color: #000;
+  /* display: flex;
+  align-items: center; */
+}
+
+.blog-section .container {
+    z-index: 6; /* サイドバーより上に表示 */
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;
+}
+
+/* Swiperスタイル */
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+}
+
+.blog-swiper {
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-card {
+  background-color: #fcd100;
+  color: #000;
+  padding: 30px;
+  height: 250px;
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+}
+
+.blog-card h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.blog-card p {
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.blog-date {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  align-self: flex-end;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fcd100 !important;
+}
+
+.swiper-pagination-bullet {
+  background: #fff !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fcd100 !important;
+  opacity: 1 !important;
+}
+
+/* ニュースセクション */
+.news-section {
+  background-color: #000;
+  /* display: flex;
+  align-items: center; */
+}
+
+.news-section .container {
+  z-index: 6; /* サイドバーより上に表示 */
+  border-bottom: 1px solid #333;
+  border-top: 1px solid #333;
+}
+
+
+.news-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* overflow-y: auto;
+  scrollbar-width: thin;
+  -ms-overflow-style: auto; */
+  padding-right: 20px;
+  /* height: calc(100vh - 250px); */
+}
+
+.news-item {
+  padding: 2rem 0;
+  /* display: flex;
+  align-items: center; */
+  position: relative;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.news-item:hover {
+  transform: translateX(10px);
+}
+
+.news-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #dadada;
+  transform: scaleX(0); /* 横に0に縮める */
+  transform-origin: left center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.news-item:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.news-tag {
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 0.5rem 1rem;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+}
+
+.news-date {
+  margin-right: 2rem;
+  font-size: 1.4rem;
+  color: #aaa;
+}
+
+.news-content {
+  font-size: 1.6rem;
+}
+
+/* コンタクトセクション */
+.contact-section {
+  background-color: #000;
+  /* display: flex;
+  align-items: center; */
+}
+
+.contact-section .container {
+  z-index: 6; /* サイドバーより上に表示 */
+  border-top: 1px solid #333;
+  padding: 20rem 10rem;
+}
+
+.contact-link {
+  width: 70rem;
+  display: inline-block;
+  text-align: left;
+  position: relative;
+  padding: 40px 0;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: bold;
+  margin-left: 6rem;
+  letter-spacing: 0.5rem;
+  transition: transform 0.3s ease;
+  font-family: 'Black Ops One', cursive;
+  color: #fff;
+}
+
+
+
+.contact-title {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: bold;
+}
+
+.contact-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  transition: width0.4s ease;
+}
+
+.contact-link:hover {
+  transform: translateX(10px);
+  color: #fcd100;
+}
+
+.contact-link:hover::after {
+  /* transform: scaleX(1);
+  opacity: 1; */
+  width: 50%;
+}
+
+.contact-link:hover .lineArrow {
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+}
+
+.lineArrow {
+  display: inline-block;
+  width: 120%;
+  height: 15px;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+   /*傾きを調節*/
+  transform: skew(45deg);
+  /*下線矢印をテキストに合わせてうまい具合にはめる*/
+  margin: -10px 0 0 -25px;
+  transition: width 0.4s ease, opacity 0.4s ease;
+  vertical-align: middle;
+}
+
+
+
+/* フッター */
+/* .site-footer {
+  background-color: #000;
+  padding: 60px 0 20px;
+  overflow: visible;
+  display: flex;
+} */
+
+/* .footer-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+} */
+
+.footer-section {
+  background-color: #000;
+  padding: 60px 0 20px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative; /* z-index を有効にするために必要 */
+  z-index: 10; /* 他の要素より上に出す */
+  border-top: 1px solid #333;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #dadada;
+  z-index: 888; /* 念のため個別にも設定（サイト構造次第で効果あり） */
+  position: relative; /* z-index 有効化用 */
+}
+
+
+
+.footer-social p {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  width: 100%;
+  color: #dadada;
+} */
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.copyright {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+  .section-sidebar {
+    width: 60px;
+  }
+
+  .service-content,
+  .activity-grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .desktop-header {
+    display: none;
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  .section-sidebar {
+    width: 160px;
+  }
+
+  .vertical-text span {
+    font-size: 1rem;
+  }
+
+  .service-content,
+  .activity-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-image,
+  .activity-image {
+    height: 250px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .concrete-value,
+  .abstract-thinking,
+  .about-message {
+    grid-column: span 12;
+    margin-bottom: 30px;
+  }
+
+  .concrete-value,
+  .abstract-thinking {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .arrow-left {
+    display: none;
+  }
+
+  .contact-title {
+    font-size: 2.4rem;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .section-sidebar {
+    display: none;
+  }
+
+    /* 要確認 */
+  .section .container {
+    padding: 60px 20px;
+  }
+
+  .section {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .news-list,
+  .service-section .container,
+  .activity-section .container {
+    height: auto;
+    max-height: calc(100vh - 200px);
+    padding-left: 20px;
+    /* width: 100%; */
+    margin-left: 0;
+  }
+
+  .blog-card {
+    max-width: 100%;
+  }
+
+  .footer-content,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-nav ul {
+    justify-content: center;
+  }
+
+  .news-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .news-tag,
+  .news-date {
+    margin-right: 0;
+  }
+
+  .cursor {
+    display: none !important;
+  }
+}
+
+/* fullPage.js スタイル */
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: #fcd100;
+}
+
+.fp-section {
+  transition: all 0.7s ease;
+}
+
+/* .fp-overflow {
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  -ms-overflow-style: auto;
+  display: flex;
+  width: 100%;
+  height: calc(100% - 90px);
+  margin-top: 90px;
+} */
+
+/* fp-overflow ラッパー自体の調整 (通常は不要だが念のため) */
+.fp-overflow {
+  /* 基本的に fullPage.js に任せる */
+  /* もし問題があれば、width や margin-left を調整する可能性もあるが、
+     まずは .container の padding-left で対応する */
+  position: relative; /* iScroll のため */
+  height: 100%;
+  width: calc(100% - 11%); /* サイドバーを除いた幅 */
+  margin-left: 11%; /* サイドバーの幅分ずらす */
+  box-sizing: border-box;
+  overflow: hidden; /* fullPage.jsが内部でスクロール管理 */
+  z-index: 1; /* サイドバーより奥 */
+}
+
+
+/* fp-overflow を使わないセクションのコンテナ (例: Contact) */
+.section:not(.fp-scrollable) > .container {
+      margin-left: 160px; /* サイドバーの幅分ずらす */
+      width: calc(100% - 160px); /* サイドバーを除いた幅 */
+      height: 100%;
+      position: relative;
+      z-index: 1;
+      padding: 80px 40px 40px 40px; /* 上(ヘッダー分)左右下のパディング */
+      box-sizing: border-box;
+  }
+
+
+
+/* fp-overflow を使うセクションのコンテナ共通 */
+.section.fp-scrollable > .fp-overflow > .container { /* fp-overflow内のコンテナ */
+  width: 100%; /* コンテナ自体の幅は100% */
+  box-sizing: border-box; /* paddingを含めて幅計算 */
+  /* height: 100%; */
+  margin-left: auto; /* 中央寄せを維持 */
+  margin-right: auto; /* 中央寄せを維持 */
+  padding: 80px 40px 40px 40px; /* 上(ヘッダー分)左右下のパディング */
+  max-width: 1200px; /* コンテンツの最大幅を設定 (例) */
+}
+
+/* fp-overflow を使うセクションのコンテナ調整 白背景*/
+.section.about-section .fp-overflow .container,
+.section.service-section .fp-overflow .container,
+.section.activity-section .fp-overflow .container {
+     height: auto; /* コンテンツに合わせて高さを可変に */
+     min-height: 100%; /* 最低でもビューポート高さを確保 */
+     padding-top: 60px;
+     /* padding-bottom: 60px; */
+     border-bottom:1px solid #dadada;
+}
+.section .fp-overflow .container {
+    height: auto; /* コンテンツに合わせて高さを可変に */
+    min-height: 100%; /* 最低でもビューポート高さを確保 */
+}
+
+.section.hero-section .fp-overflow .container {
+  min-height: 100%; /* 最低でもビューポート高さを確保 */
+     padding-top: 60px;
+     padding-bottom: 60px;
+     border-bottom: 1px solid #333;
+}
+
+/* fp-overflow を使うセクションのコンテナ調整 黒背景*/
+.section.blog-section .fp-overflow .container,
+.section.news-section .fp-overflow .container{
+  height: auto; /* コンテンツに合わせて高さを可変に */
+  min-height: 100%; /* 最低でもビューポート高さを確保 */
+  padding-top: 60px;
+  border-bottom:1px solid #333;
+}
+
+
+
+.fp-overflow::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 993px) {
+  body {
+    overflow: hidden;
+  }
+
+  .section {
+    overflow: hidden;
+  }
+
+  .fp-section .fp-tableCell {
+    overflow: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .section {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .fp-section {
+    height: auto !important;
+  }
+
+  .fp-tableCell {
+    height: auto !important;
+    display: block;
+  }
+}
+
+/* サービスセクションとアクティビティセクションのサイドバーのz-indexを調整 */
+.service-section .section-sidebar,
+.activity-section .section-sidebar {
+  z-index: 5; /* メインコンテンツより下に表示 */
+}
+
+/* ナビゲーションメニューのスタイル調整 */
+.desktop-header {
+  background-color: transparent;
+  padding: 20px 0;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.logo-circle {
+  width: 60px;
+  height: 60px;
+}
+
+/* ソーシャルメディアアイコン */
+.header-social {
+  display: flex;
+  gap: 15px;
+}
+
+.header-social-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.header-social-icon:hover {
+  transform: scale(1.1);
+}

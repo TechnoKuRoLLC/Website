@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techno KuRo</title>
+<!-- Swiperのスタイルシートを追加 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<!-- fullPage.js 4.0.20 (MITライセンス版)に変更 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css">
+<link rel="stylesheet" href="service.css">
+
+<!-- フォントの読み込み -->
+<link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<!-- カスタムカーソル要素 -->
+<div id="cursor" class="cursor"></div>
+
+<!-- ハンバーガーメニュー（初期状態は非表示） -->
+<div class="hamburger-menu" id="hamburgerMenu">
+  <div class="hamburger-header">
+    <a href="/" class="logo">
+        <img src="./img/KuRoLogoCircle512.png" alt="TechnoKuRo logo" class="logo-circle">
+    </a>
+    <button class="close-btn" id="closeMenu">×</button>
+  </div>
+  <nav class="hamburger-nav">
+    <ul>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#service">SERVICE</a></li>
+      <li><a href="#activity">ACTIVITY</a></li>
+      <li><a href="#blog" >BLOG</a></li>
+      <li><a href="#news">NEWS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+  <div class="hamburger-footer">
+    <span class="follow-text">Follow</span>
+    <div class="social-icons">
+      <a href="#" class="social-icon">
+        <img src="https://v0.blob.com/line-icon.svg" alt="LINE" width="24" height="24">
+      </a>
+      <a href="#" class="social-icon">
+        <img src="https://v0.blob.com/x-icon.svg" alt="X" width="24" height="24">
+      </a>
+      <a href="#" class="social-icon">
+        <img src="https://v0.blob.com/discord-icon.svg" alt="Discord" width="24" height="24">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- モバイルヘッダー -->
+<header class="mobile-header">
+    <a href="/" class="logo">
+        <img src="./img/KuRoLogoCircle512.png" alt="TechnoKuRo logo" class="logo-circle">
+      </a>
+  <div class="mobile-actions">
+  
+  
+<button id="openMenu" class="menu-btn">
+  <span class="menu-line"></span>
+  <span class="menu-line"></span>
+  <span class="menu-line"></span>
+</button>
+</div>
+
+</header>
+
+<div id="fullpage">
+  <!-- Serviceセクション -->
+  <div class="section service-section" data-anchor="service">
+    <div class="section-sidebar light-sidebar">
+    <div class="section-divider section-divider-top"></div>
+    <div class="section-divider section-divider-bottom"></div>
+    <!-- サイドバー - Serviceセクション用 -->
+    <!-- <div class="section-sidebar light-sidebar">
+      <div class="vertical-text dark-text">
+        <span>MENU</span>
+        <div class="sidebar-vertical-line"></div>
+        <span>SCROLL</span>
+      </div> -->
+      <!-- 横ライン -->
+      <!-- <div class="horizontal-section-line"></div>
+    </div> -->
+
+      <div class="container">
+        <h2 class="service-title"><img src="./img/Service.png" alt="Service"></h2>
+        <div class="light-line "></div>
+      
+      <!-- Security Consultant -->
+    <div class="service-item">
+        <h3 class="service-item-title">Security Consultant</h3>
+
+        <div class="service-grid">
+            <div class="service-content">
+                <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">シンプルで強固な情報セキュリティを提供いたします
+                    <br></h4>
+                <p class="service-text">
+                    国家資格と国際的な審査資格を持つ専門家が、組織にフィットしたセキュリティ対策をサポートします。<br>
+                    豊富なコンサル経験と開発技術を活かし、ISMS導入、リスク評価、改善策提案までワンストップ対応が可能です。技術と安全性を両立するIT環境づくりを支援いたします。<br>
+                </p>
+            </div>
+            <div class="service-image">
+                <img src="./img/shikaku.png" alt="資格 RISS ISMS "  style="width: auto; height:100%; object-fit: cover; padding-left:2rem;">
+              </div>
+
+          <div class="service-image">
+            <img src="./img/security.png" alt="セキュリティコンサルタント">
+          </div>
+          <div class="service-content">
+            <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">ISMS認証・Pマーク取得なら、実績豊富なTechnoKuRo<br></h4>
+            <p class="service-text">
+                TechnoKuRoは、ISMS認証・Pマーク取得を圧倒的に効率化するクラウドツール「SecureNaviⓇ」の正規販売パートナーです。<br>
+                SecureNaviの黎明期からコンサルタントとして携わってきた当社には、どこよりも豊富な運用ノウハウと専門知識があります。<br>
+                認証取得から運用・更新まで、経験豊かなプロが確実にサポートいたします。<br>
+            </p>
+
+            <div class="button02"><div class="reverse">
+                <a href="#">contact</a></div>
+            </div>
+            </div>
+          </div>
+
+        <h3 class="service-item-title">Security Consultant</h3>
+        <div class="service-grid">
+        <div class="service-content">
+            <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">ワンストップ開発で「点」ではなく「面」のサポート<br></h4>
+            <p class="service-text">
+                TechnoKuRoなら要件定義・設計から開発・運用・保守・セキュリティまで一気通貫で貴社の開発をサポートいたします。<br>
+                開発言語は、React・Rails・Node.js 等、モダン言語をはじめ、多様な言語に柔軟に対応可能です。<br>
+                最新トレンドを掴むエンジニアコミュニティ運営により、新しい技術にふれる機会があるため常に最新の技術で、あなたのビジネスを強力に支援します。<br>
+            </p>
+            
+        </div>
+        <div class="service-image">
+            <img src="./img/webap.png" alt="webアプリケーション開発">
+          </div>
+
+          <div class="service-image">
+            <img src="/img/webap2.png" alt="webアプリケーション開発 コンサルタント 都度見積もり">
+          </div>
+          <div class="service-content">
+            <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">必要なとき、必要なだけ<br>
+                エンジニアもコンサルも自由に使える、スマート顧問スタイル</h4>
+            <p class="service-text">
+                「随時見積もり」で要求にジャストフィットする柔軟な契約形態をご提案します。<br>
+                ちょっとしたアドバイスから本格的な監修まで対応可能です。豊富な経験と鋭い予見力でリスクを徹底的に回避し、最大のコストパフォーマンスとタイムパフォーマンスを実現します。<br>
+                カスタマイズ志向の企業に選ばれる、新時代のプロフェッショナル活用法です。<br>
+            </p>
+
+            <div class="button02"><div class="reverse">
+                <a href="#">contact</a></div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="service-item-title">Product</h3>
+        <div class="service-grid">
+        <div class="service-content">
+            <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">エンジニアの真価で未来を照らす共創プラットフォーム<br></h4>
+            <p class="service-text">
+                Freelance Engineer.netは、フリーランスエンジニアのスキル・実績・人間力を可視化し、エンジニアと企業が本質的につながれるプラットフォームです。<br>
+                独自の組織運営を通じ、エンジニアが市場で一目置かれる輝きを放ち、次世代エンジニアの進むべき道を明るく照らしたいという想いを込めて開発しました。
+                <br>
+                価値あるエンジニアを価値ある場所へ。<br>
+                freelance-engineer.net は、エンジニアが真価で語られる未来を実現します。
+                
+                <br>
+            </p>
+            <div class="button02"><div class="reverse">
+                <a href="#">Go to Product</a></div>
+            </div>
+        </div>
+        <div class="service-image">
+            <img src="./img/FE.net.png" alt="LINEオープンチャット フリーランスエンジニア">
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  <!-- フッター -->
+  <div class="footer section footer-section fp-auto-height" data-anchor="footer">
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <p>Follow me</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon">
+              <img src="https://v0.blob.com/line-icon.svg" alt="LINE">
+            </a>
+            <a href="#" class="social-icon">
+              <img src="https://v0.blob.com/x-icon.svg" alt="X">
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="/cookie-policy">Cookie Policy</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+        </div>
+        <p class="copyright">©Techno KuRo Co.Ltd.</p>
+      </div>
+  </div>
+</div> <!-- #fullpage の閉じタグ -->
+
+    
+<!-- スクリプト -->
+<!-- スクリプトの読み込み順序を修正 -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/dist/lenis.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
