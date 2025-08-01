@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="大小あらゆる規模のシステム開発に従事して20年以上。 国家資格「安全確保支援士」の知識と、元警察官の経験を活かして開発からISMS/Pマークまで攻守まとめてご支援します">
+<meta property="og:title" content="TechnoKuRo LLC.">
+<meta property="og:description" content="大小あらゆる規模のシステム開発に従事して20年以上。 国家資格「安全確保支援士」の知識と、元警察官の経験を活かして開発からISMS/Pマークまで攻守まとめてご支援します">
+
+<title>Techno KuRo</title>
+
+<!-- External Libraries -->
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<!-- fullPage.js CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- パフォーマンス最適化 -->
+<!-- 重要でないCSSの遅延読み込み -->
+<link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<!-- フォントの最適化 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+
+<!-- FontAwesome -->
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+</head>
+<body>
+<!-- Custom Cursor -->
+<div id="cursor" class="cursor"></div>
+
+<!-- CSPヘッダー／セキュリティ強化 -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.jquery.com https://cdn.jsdelivr.net;">
+
+<!-- フォールバック用のローカルライブラリ -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-3.7.1.min.js"><\/script>')</script>
+
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#000">
+
+
+<!-- Hamburger Menu (Hidden by default) -->
+<div class="hamburger-menu" id="hamburgerMenu">
+  <div class="hamburger-header">
+    <a href="/" class="logo">
+      <img src="./img/KuRoLogoCircle512.png" alt="TechnoKuRo logo" class="logo-circle">
+    </a>
+    <button class="close-btn" id="closeMenu">×</button>
+  </div>
+  <nav class="hamburger-nav">
+    <ul>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#service">SERVICE</a></li>
+      <li><a href="#activity">ACTIVITY</a></li>
+      <li><a href="#blog">BLOG</a></li>
+      <li><a href="#news">NEWS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+  <div class="hamburger-footer">
+    <span class="follow-text">▶︎ Follow</span>
+    <div class="social-icons">
+      <a href="#" class="social-icon" aria-label="LINE">
+        <img src="./img/sns_line.png" alt="LINE">
+        </svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="X (Twitter)">
+        <img src="./img/sns_x.png" alt="X">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Desktop Header -->
+<header class="desktop-header">
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="./img/KuRoLogoCircle512.png" alt="TechnoKuRo logo" class="logo-circle">
+    </a>
+    <nav class="main-nav">
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#service">Service</a>
+        <a href="#activity">Activity</a>
+        <a href="#blog">Blog</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <div class="header-actions">
+      <div class="header-social">
+        <a href="#" class="social-icon" aria-label="LINE">
+          <img src="./img/sns_line.png" alt="LINE">
+        </a>
+        <a href="#" class="social-icon" aria-label="X (Twitter)">
+          <img src="./img/sns_x.png" alt="X">
+        </a>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Header -->
+<header class="mobile-header">
+  <a href="/" class="logo">
+    <img src="./img/KuRoLogoCircle512.png" alt="TechnoKuRo logo" class="logo-circle">
+  </a>
+  <div class="mobile-actions">
+    <button id="openMenu" class="menu-btn" aria-label="メニューを開く">
+      <span class="menu-line"></span>
+      <span class="menu-line"></span>
+      <span class="menu-line"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Main Content - fullPage.js -->
+<div id="fullpage">
+  <!-- Hero Section -->
+  <div class="section hero-section" data-anchor="hero">
+    <div class="section-divider section-divider-top"></div>
+    <div class="section-divider section-divider-bottom"></div>
+    <div class="section-sidebar dark-sidebar"></div>
+    
+    <div class="fp-overflow">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Think Abstract &gt;<br>
+            Act Realize =&gt; <br>
+            True Value
+          </h1>
+        </div>
+        <div class="mv-scroll">
+          <div class="scroll-icon">↓</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Philosophy Section -->
+  <div class="section philosophy-section black-section" data-anchor="philosophy">
+    <div class="section-divider section-divider-top"></div>
+    <div class="section-divider section-divider-bottom"></div>
+    <div class="section-sidebar dark-sidebar"></div>
+
+    <div class="fp-overflow">
+      <div class="container">
+        <div class="philosophy-content-wrapper">
+          <p class="main-text">
+            私たちは、ただ「作る」ことに価値を見出していません。<br>
+            「なぜ作るのか」「何のために作るのか」を見極め、その目的を実現することこそが、真の価値だと信じています。<br><br>
+            だからこそ、私たちはまず思考する。抽象的に、深く。<br>
+            ――Think Abstract.<br>
+            そこから生まれた理解を、現実の行動と実装へ落とし込む。<br>
+            ――Act Realize.<br>
+            そして、クライアントにとって意味ある成果を生み出す。<br>
+            ――True Value.<br><br>
+            この姿勢は、私たちが最も大切にしている人間らしさの表れです。<br>
+            AIは合理的な答えを返せても、依頼者が心から「これだ」と納得できる本質的な解は、人間の共感力と直感があってこそ導ける。<br>
+            だからこそ、私たちは人であることに誇りを持ち、そこにしか生まれない価値を追い求め続けています。<br><br>
+          </p>
+          <div class="conclusion">
+            全ては価値を生み出すために。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="section about-section black-section" data-anchor="about">
+    <div class="section-divider section-divider-top"></div>
+    <div class="section-divider section-divider-bottom"></div>
+    <div class="section-sidebar dark-sidebar">
+      <div class="vertical-text">
+        <span>{ ABOUT }</span>
+      </div>
+    </div>
+
+    <div class="fp-overflow">
+      <div class="container">
+        <h2 class="about-title"><img src="./img/About.png" alt="About"></h2>
+        <div class="dark-line"></div>
+        
+        <div class="about-content-wrapper">
+          <div class="about-column">
+            <h3 class="about-column-title">{ 企業の方へ }</h3>
+            <h4 class="about-column-subtitle">「何を作るか」より<br>
+              「どうしたいか」をご一緒に</h4>
+            <p class="about-column-text">
+              TechnoKuRo は「抽象思考⇒具現=真価」を信念に、お客様が叶えて実現したい本質的価値を追求します。<br>
+              設計開発・運用・セキュリティまで、「定常可」を一貫サポート可能です。<br>
+              国家資格「情報処理安全確保支援士」の堅実さと、エンジニアコミュニティの柔軟力は、独自のエネルギーとなり、「できる」を超える価値を創造します。
+            </p>
+          </div>
+          
+          <div class="about-column">
+            <h3 class="about-column-title">{ エンジニアの方へ }</h3>
+            <h4 class="about-column-subtitle">目指すのは「作る」のではなく<br>
+              「共に創る」こと</h4>
+            <p class="about-column-text">
+              真価で勝負するエンジニアへ。<br>
+              私たちは、表面的な評価ではなく、真の価値を持つエンジニアが活躍できる環境を共創したいと考えています。<br>
+              エンジニアの新たな価値観を創出する freelance-engineer.net や、スキルの向上をリアルな形でサポートする EngineerExpress など、<br>
+              価値観を取り出し、一緒に創っていきましょう！
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Section -->
+  <div class="section service-section white-section" data-anchor="service">
+    <div class="section-sidebar light-sidebar">
+      <div class="vertical-text dark-text"><span>{ SERVICE }</span></div>
+    </div>
+    <div class="section-divider section-divider-top"></div>
+    <div class="section-divider section-divider-bottom"></div>
+    
+    <div class="fp-overflow">
+      <div class="container">
+        <h2 class="service-title"><img src="./img/Service.png" alt="Service"></h2>
+        <div class="light-line"></div>
+              
+        <div class="service-items">
+          <div class="service-item">
+            <div class="service-number">
+              <span>01</span>
+            </div>
+            <div class="service-details">
+              <h3 class="service-details-title">Security Consultant</h3>
+              <p>国家資格と国際的な審査資格を持つ専門家が、組織にフィットしたセキュリティ対策をサポートします。</p>
+            </div>
+          </div>
+          
+          <div class="service-item">
+            <div class="service-number">
+              <span>02</span>
+            </div>
+            <div class="service-details">
+              <h3 class="service-details-title">Web application development</h3>
+              <p>要件定義・設計から開発・運用・保守・セキュリティまで一気通貫で貴社の開発をサポートいたします。</p>
+            </div>
+          </div>
+          
+          <div class="service-item">
+            <div class="service-number">
+              <span>03</span>
+            </div>
+            <div class="service-details">
+              <h3 class="service-details-title">Freelance Engineer.net</h3>
+              <p>スキル・実績・人間力を可視化し、フリーランスエンジニアと企業が本質的につながれるプラットフォーム</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="button01">
+          <div class="reverse">
+            <a href="service.html">OUR SERVICE &gt;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity Section -->
+  <div class="section activity-section" data-anchor="activity">
+    <div class="section-sidebar light-sidebar">
+      <div class="vertical-text dark-text">
+        <span>{ ACTIVITY }</span>
+      </div>
+    </div>
+
+    <div class="section-divider section-divider-top"></div>
+    <div class="section-divider section-divider-bottom"></div>
+
+    <div class="fp-overflow">
+      <div class="container">
+        <h2 class="section-title"><img src="./img/activity.png" alt="Activity"></h2>
+        <div class="light-line"></div>
+
+        <!-- Freelance Engineer -->
+        <div class="act-item">
+          <div class="act-details">
+            <!-- <div class="act-title-container"> -->
+            <div class="act-number"><span>01</span></div>
+            <div class="act-texts">
+              <h3 class="act-details-title">
+                900人超のナレッジが交差する共創空間<br>
+                LINE オープンチャット 「フリーランスエンジニア」
+              </h3>
+              <p class="act-description">
+                TechnoKuRoが運営するLINEオープンチャット「フリーランスエンジニア」は、「自由でリアルなコミュニケーション」がテーマ。<br>
+                働き方も、余暇も、お金も、信念や夢、雑談さえもナレッジになる！<br>
+                毎週のライブ配信や定期的なオフ会など、リアルな交流もアツく展開中！<br>
+                エンジニアやフリーランスの枠を超え、誰もが「未来の自分」を見つけられる、誰にでも開かれた成長と挑戦の場です。<br>
+              </p>
+            </div>
+          </div>
+          
+          <div class="act-image">
+            <img src="./img/FE.png" alt="LINE オープンチャットフリーランスエンジニア　LINE OC オプチャ">
+          </div>
+        </div>
+
+        <h3 class="lineoc-merit">｛ フリーランスエンジニアOCの良いところ <div class="activity-number">6</div>選 ｝</h2>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon"><img src="./img/line-1.png" alt="LINE オープンチャットフリーランスエンジニア　LINE OC オプチャ"></div>
+            <div class="feature-title">実務に直結するリアルな情報交換</div>
+            <div class="feature-description">
+              インフラ・設計・開発・保守・運用、経験者・既存技術の共有等の蓄積を利用してキャリアアップを目指せます。
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"><img src="./img/line-2.png" alt="メンバー同士の温かいサポート"></div>
+            <div class="feature-title">メンバー同士の温かいサポート</div>
+            <div class="feature-description">
+              毎週月曜日は22:00から、熱いライブトークを実施中！皆さんも是非参加してみましょう、楽しく交流しよう。
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"><img src="./img/line-3.png" alt="フリーランスならではの課題と戦略共有"></div>
+            <div class="feature-title">フリーランスならではの課題と戦略共有</div>
+            <div class="feature-description">
+              毎週月曜日は22:00から、熱いライブトークを実施中！皆さんも是非参加してみましょう、楽しく交流しよう。
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"><img src="./img/line-4.png" alt="オフ会やリアルな交流も盛ん"></div>
+            <div class="feature-title">オフ会やリアルな交流も盛ん</div>
+            <div class="feature-description">
+              総合オフ会を行ったり、その方法を教えてもらったりと良い感じで盛り上がっています。
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"><img src="./img/line-5.png" alt="ライブトーク"></div>
+            <div class="feature-title">ライブトーク</div>
+            <div class="feature-description">
+              毎週月曜日は22:00から、熱いライブトークを実施中！皆さんも是非参加してみましょう、楽しく交流しよう。
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"><img src="./img/line-6.png" alt="Youtube"></div>
+            <div class="feature-title">Youtube</div>
+            <div class="feature-description">
+              毎週月曜日は22:00から、熱いライブトークを実施中！皆さんも是非参加してみましょう、楽しく交流しよう。
+            </div>
+          </div>
+        </div>
+
+        <div class="activity-content">
+          <h4>総評🏆</h4>
+          <p class="activity-text">
+            このオープンチャットは、フリーランスエンジニアが孤立せず、実務・精神両面でつながりを得られる貴重なコミュニティです。<br>
+            知識の交換所であるだけでなく、同じ境遇の仲間と出会い、相談し、時には一緒に笑える場所として、多くの参加者にとって「居場所」となっています。<br>
+          </p>
+        </div>
+        
+        <div class="line-cta">
+          <div class="button02">
+            <div class="reverse">
+              <a href="service.html">JOIN LINE OPENCHAT &gt;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="act-item">
+          <div class="act-details">
+            <div class="act-number"><span>02</span></div>
+            <div class="act-texts">
+              <h3 class="act-details-title">
+                実務を通じて「真価」を体験する特急列車<br>
+                ―実務発注型メンタリング『EngineerExpress』
+              </h3>
+              <p class="act-description">
+                エンジニアのキャリア形成は、各駅停車のように地道な積み重ね。<br>
+                『EngineerExpress』で、君の「やりたい」を直接キャリアにしよう！<br>
+                未経験・微経験エンジニアに、TechnoKuRoが実務を発注。<br>
+                現役エンジニアからの、時には丁寧なメンタリング、時には現場さながらのプレッシャーを受けながら<br>
+                契約締結から納品までを君自身がフリーランスとして自走してもらいます。<br>
+                リアルな実務を通じて価値あるエンジニアへの最短ルートを走り切れ！<br>
+                中高生が憧れる職業No.1のエンジニア。 君はこの特急列車の終着駅までたどり着けるか――？
+              </p>
+              <div class="button02">
+                <div class="reverse">
+                  <a href="#">JOIN EngineerExpress &gt;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="activity-image">
+            <img src="./img/FE.net.png" alt="EngineerExpress">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Section -->
+  <div class="section blog-section black-section" data-anchor="blog">
+    <div class="section-divider section-divider-top"></div>
+    <div class="section-divider section-divider-bottom"></div>
+    <div class="section-sidebar dark-sidebar">
+      <div class="vertical-text">
+        <span>{ BLOG }</span>
+      </div>
+    </div>
+
+    <div class="fp-overflow">
+      <div class="container">
+        <h2 class="section-title"><img src="./img/BLOG.png" alt="BLOG"></h2>
+        <div class="dark-line"></div>
+        
+        <!-- Swiper Slider -->
+        <div class="swiper blog-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="blog-card">
+                <h3>テクノロジーの最新トレンド</h3>
+                <p>ブログ記事タイトルがここに入ります。ブログ記事の説明文がここに入ります。</p>
+                <span class="blog-date">2025.04.10</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="blog-card">
+                <h3>AIの進化と未来</h3>
+                <p>ブログ記事タイトルがここに入ります。ブログ記事の説明文がここに入ります。</p>
+                <span class="blog-date">2025.03.25</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="blog-card">
+                <h3>デジタルトランスフォーメーション</h3>
+                <p>ブログ記事タイトルがここに入ります。ブログ記事の説明文がここに入ります。</p>
+                <span class="blog-date">2025.03.05</span>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- News Section -->
+  <div class="section news-section" data-anchor="news">
+    <div class="section-divider section-divider-top"></div>
+    <div class="section-divider section-divider-bottom"></div>
+    <div class="section-sidebar dark-sidebar">
+      <div class="vertical-text">
+        <span>{ NEWS }</span>
+      </div>
+    </div>
+
+    <div class="fp-overflow">
+      <div class="container">
+        <h2 class="news-title"><img src="./img/NEWS.png" alt="news"></h2>
+        <div class="dark-line"></div>
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-meta"><span class="news-date">2025.04.15</span>
+            <span class="news-tag">{NEWS}</span></div>
+            <span class="news-content">HPリニューアルHPリニューアルHPリニューアル</span>
+          </div>
+          <div class="news-item">
+            <div class="news-meta"><span class="news-date">2025.04.15</span>
+            <span class="news-tag">{NEWS}</span></div>
+            <span class="news-content">HPリニューアル</span>
+          </div>
+          <div class="news-item">
+            <div class="news-meta"><span class="news-date">2025.04.15</span>
+            <span class="news-tag">{NEWS}</span></div>
+            <span class="news-content">HPリニューアル</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="section contact-section" data-anchor="contact">
+    <div class="section-divider section-divider-top"></div>
+    <div class="section-divider section-divider-bottom"></div>
+    <div class="section-sidebar dark-sidebar">
+      <div class="vertical-text">
+        <span>{ CONTACT }</span>
+      </div>
+    </div>
+    
+    <div class="fp-overflow">
+      <div class="container">
+        <a href="/contact" class="contact-link">Contact Techno KuRo
+          <div class="lineArrow"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer section footer-section fp-auto-height" data-anchor="footer">
+    <div class="footer-links">
+      <!-- Follow me セクション -->
+      <div class="follow-section">
+          <span>▶︎ Follow me</span>
+          <div class="social-icons">
+              <!-- LINEアイコン -->
+              <a href="#" class="social-icon" aria-label="LINE">
+                <img src="./img/sns_line.png" alt="LINE">
+              </a>
+
+             
+              <!-- Xアイコン -->
+              <a href="#" class="social-icon" aria-label="X (Twitter)">
+                <img src="./img/sns_x.png" alt="X">
+              </a>
+          </div>
+      </div>
+
+      <!-- ポリシーリンク -->
+      <div class="policy-links">
+          <a href="#">Cookie Policy</a>
+          <a href="#">Privacy Policy</a>
+          ©Techno KuRo Co.Ltd.
+      </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/dist/lenis.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
