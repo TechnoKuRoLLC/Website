@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="大小あらゆる規模のシステム開発に従事して20年以上。 国家資格「安全確保支援士」の知識と、元警察官の経験を活かして開発からISMS/Pマークまで攻守まとめてご支援します">
+<meta property="og:title" content="TechnoKuRo LLC.">
+<meta property="og:description" content="大小あらゆる規模のシステム開発に従事して20年以上。 国家資格「安全確保支援士」の知識と、元警察官の経験を活かして開発からISMS/Pマークまで攻守まとめてご支援します">
+
+<!-- CSPヘッダー／セキュリティ強化 -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.jquery.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+
+<title>Techno KuRo - Service</title>
+
+<!-- PWA設定 -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#000">
+
+<!-- フォントの最適化 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Black+Ops+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+
+<!-- FontAwesome -->
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+<!-- Swiperのスタイルシート -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<!-- fullPage.js 4.0.20 (MITライセンス版) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css">
+<link rel="stylesheet" href="service.css">
+</head>
+<body>
+<!-- Custom Cursor -->
+<div id="cursor" class="cursor"></div>
+
+<!-- ハンバーガーメニュー（初期状態は非表示） -->
+<div class="hamburger-menu" id="hamburgerMenu">
+  <div class="hamburger-header">
+    <a href="/" class="logo">
+        <img src="./img/KuRoLogoCircle512.png" alt="TechnoKuRo logo" class="logo-circle">
+    </a>
+    <button class="close-btn" id="closeMenu" aria-label="メニューを閉じる">×</button>
+  </div>
+  <nav class="hamburger-nav">
+    <ul>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#service">SERVICE</a></li>
+      <li><a href="#activity">ACTIVITY</a></li>
+      <li><a href="#blog">BLOG</a></li>
+      <li><a href="#news">NEWS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+  <div class="hamburger-footer">
+    <span class="follow-text">Follow</span>
+    <div class="social-icons">
+      <a href="#" class="social-icon" aria-label="LINE">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755z"/>
+        </svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="X (Twitter)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="Discord">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.445.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 2.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-2.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- モバイルヘッダー -->
+<header class="mobile-header">
+    <a href="/" class="logo">
+        <img src="./img/KuRoLogoCircle512.png" alt="TechnoKuRo logo" class="logo-circle">
+    </a>
+    <div class="mobile-actions">
+        <button id="openMenu" class="menu-btn" aria-label="メニューを開く">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+        </button>
+    </div>
+</header>
+
+<div id="fullpage">
+    <!-- Serviceセクション -->
+    <div class="section service-section" data-anchor="service">
+        <div class="section-sidebar light-sidebar">
+            <div class="vertical-text dark-text"><span>{ SERVICE }</span></div>
+        </div>
+        <div class="section-divider section-divider-top"></div>
+        <div class="section-divider section-divider-bottom"></div>
+
+        <div class="container">
+            <h2>
+                <div class="service-title">
+                    <img src="./img/Service.png" alt="Service" class="show">
+                </div>
+            </h2>
+            <div class="light-line"></div>
+      
+            <!-- Security Consultant -->
+            <div class="service-item">
+                <div class="service-header">
+                    <div class="act-number"><span>01</span></div>
+                    <h3 class="service-item-title fade-in-text">Security Consultant</h3>
+                </div>
+
+                <div class="service-grid">
+                    <div class="service-content">
+                        <h4 class="fade-in-text" style="--delay: 1">シンプルで強固な情報セキュリティを提供いたします</h4>
+                        <p class="service-text fade-in-text" style="--delay: 2">
+                            国家資格と国際的な審査資格を持つ専門家が、組織にフィットしたセキュリティ対策をサポートします。<br>
+                            豊富なコンサル経験と開発技術を活かし、ISMS導入、リスク評価、改善策提案までワンストップ対応が可能です。技術と安全性を両立するIT環境づくりを支援いたします。
+                        </p>
+                    </div>
+                    <div class="shikaku-image fade-in-text">
+                        <img src="./img/shikaku-1.png" alt="資格証明書 RISS" class="cert-img-1">
+                        <img src="./img/shikaku-2.png" alt="資格証明書 ISMS" class="cert-img-2">
+                        <img src="./img/shikaku-3.png" alt="資格証明書" class="cert-img-1">
+                    </div>
+
+                    <div class="service-image">
+                        <img src="./img/img_security.png" alt="セキュリティコンサルタント">
+                    </div>
+                    <div class="service-content">
+                        <h4 class="fade-in-text" style="--delay: 1">ISMS認証・Pマーク取得なら、実績豊富なTechnoKuRo</h4>
+                        <p class="fade-in-text" style="--delay: 1">
+                            TechnoKuRoは、ISMS認証・Pマーク取得を圧倒的に効率化するクラウドツール「SecureNaviⓇ」の正規販売パートナーです。<br>
+                            SecureNaviの黎明期からコンサルタントとして携わってきた当社には、どこよりも豊富な運用ノウハウと専門知識があります。<br>
+                            認証取得から運用・更新まで、経験豊かなプロが確実にサポートいたします。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service-header">
+                    <div class="act-number"><span>02</span></div>
+                    <h3 class="service-item-title">Web application development</h3>
+                </div>
+                <div class="service-grid">
+                    <div class="service-content">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">ワンストップ開発で「点」ではなく「面」のサポート</h4>
+                        <p class="service-text">
+                            TechnoKuRoなら要件定義・設計から開発・運用・保守・セキュリティまで一気通貫で貴社の開発をサポートいたします。<br>
+                            開発言語は、React・Rails・Node.js 等、モダン言語をはじめ、多様な言語に柔軟に対応可能です。<br>
+                            最新トレンドを掴むエンジニアコミュニティ運営により、新しい技術にふれる機会があるため常に最新の技術で、あなたのビジネスを強力に支援します。
+                        </p>
+                    </div>
+                    <div class="service-image">
+                        <img src="./img/img_webapp_1.png" alt="webアプリケーション開発">
+                    </div>
+
+                    <div class="service-image">
+                        <img src="./img/img_webapp_2.png" alt="webアプリケーション開発 コンサルタント 都度見積もり">
+                    </div>
+                    <div class="service-content">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">必要なとき、必要なだけ<br>
+                            エンジニアもコンサルも自由に使える、スマート顧問スタイル</h4>
+                        <p class="service-text">
+                            「随時見積もり」で要求にジャストフィットする柔軟な契約形態をご提案します。<br>
+                            ちょっとしたアドバイスから本格的な監修まで対応可能です。豊富な経験と鋭い予見力でリスクを徹底的に回避し、最大のコストパフォーマンスとタイムパフォーマンスを実現します。<br>
+                            カスタマイズ志向の企業に選ばれる、新時代のプロフェッショナル活用法です。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="contact-section">
+            <!-- アイコン部分 -->
+            <div class="contact-icon">
+                <!-- メールアイコン画像 -->
+                <img src="img/mail.png" alt="メールアイコン">
+            </div>
+
+            <!-- 説明テキスト -->
+            <div class="contact-description">
+                <p>セキュリティの相談から開発相談、協業の相談等、お気軽にご相談ください。</p>
+                <p>貴社のニーズに合わせた最適な開発手法をご提案いたします。</p>
+            </div>
+
+            <!-- CONTACTボタン -->
+            <div class="contact-button">
+                <a href="#contact">CONTACT</a>
+            </div>
+
+            <!-- フッター部分 -->
+            <div class="footer-links">
+                <!-- Follow me セクション -->
+                <div class="follow-section">
+                    <span>Follow me</span>
+                    <div class="social-icons">
+                        <!-- LINEアイコン -->
+                        <a href="#" class="social-icon" aria-label="LINE">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#000">
+                                <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755z"/>
+                            </svg>
+                        </a>
+                        <!-- Xアイコン -->
+                        <a href="#" class="social-icon" aria-label="X (Twitter)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#000">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ポリシーリンク -->
+                <div class="policy-links">
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">©Techno KuRo Co.Ltd.</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-3.7.1.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
