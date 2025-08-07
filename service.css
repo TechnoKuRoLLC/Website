@@ -690,7 +690,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(0.5rem, 2vw, 1rem);
-  align-items: center;
+  align-items: flex-start;
 }
 
 /* 番号とタイトルを横並びにするための親要素スタイル */
@@ -699,7 +699,7 @@ img {
   align-items: center;
   gap: 2rem;
   margin-bottom: 1rem;
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 .act-number {
@@ -719,6 +719,7 @@ img {
 .service-item-title {
   margin: 0;
   flex: 1;
+  line-height: 1.2;
 }
 
 h3 {
@@ -762,6 +763,7 @@ h3 {
   margin: 0 auto 2rem auto;
   border-radius: 0.5rem;
   overflow: hidden;
+  /* margin-top: 1rem; */
 }
 
 .cert-img-1 {
@@ -779,7 +781,7 @@ h3 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .service-image.fade-in-text {
@@ -1033,21 +1035,41 @@ h3 {
   
   /* iPad専用：shikaku-imageを横並びで表示 */
   .shikaku-image {
-    width: 100%;
-    max-width: 60rem;
     gap: 1.5rem;
+    padding: 1.5rem;
     justify-content: center;
-    flex-wrap: nowrap; /* 横並びを強制 */
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
   }
   
   .cert-img-1 {
     max-width: 8rem;
-    flex-shrink: 0;
+    max-height: 10rem;
+    width: auto;
+    height: auto;
+    flex-shrink: 1;
+    object-fit: contain;
   }
 
   .cert-img-2 {
     max-width: 20rem;
-    flex-shrink: 0;
+    max-height: 12rem;
+    width: auto;
+    height: auto;
+    flex-shrink: 1;
+    object-fit: contain;
+  }
+  
+  .cert-img-3 {
+    max-width: 6rem;
+    max-height: 8rem;
+    width: auto;
+    height: auto;
+    flex-shrink: 1;
+    object-fit: contain;
   }
 }
 
@@ -1057,7 +1079,11 @@ h3 {
     grid-template-columns: 1fr !important;
     gap: 2rem;
   }
-  
+
+ /* 2番目のservice-headerに余白を追加 */
+ /* .service-header:nth-of-type(2) {
+  margin-top: 5rem;
+   */
   /* 資格画像以外の画像を非表示 */
   .service-image:not(.fade-in-text) {
     display: none;
@@ -1091,18 +1117,42 @@ h3 {
     flex-wrap: nowrap; /* モバイルでも横並びを維持 */
   }
   
-  .shikaku-image img {
-    max-height: 15rem;
+  .shikaku-image {
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: visible;
   }
   
   .cert-img-1 {
     max-width: 6rem;
-    flex-shrink: 0;
+    max-height: 8rem;
+    width: auto;
+    height: auto;
+    flex-shrink: 1;
+    object-fit: contain;
   }
 
   .cert-img-2 {
     max-width: 15rem;
-    flex-shrink: 0;
+    max-height: 10rem;
+    width: auto;
+    height: auto;
+    flex-shrink: 1;
+    object-fit: contain;
+  }
+  
+  .cert-img-3 {
+    max-width: 5rem;
+    max-height: 7rem;
+    width: auto;
+    height: auto;
+    flex-shrink: 1;
+    object-fit: contain;
   }
   
   .contact-section {
@@ -1176,24 +1226,35 @@ h3 {
   }
   
   .shikaku-image {
-    flex-direction: row; /* 横並びを維持 */
+    flex-direction: row;
     align-items: center;
     gap: 0.8rem;
-    flex-wrap: nowrap; /* 折り返しを禁止 */
-  }
-  
-  .cert-img-1,
-  .cert-img-2 {
-    max-width: none; /* 最大幅制限を解除 */
-    flex-shrink: 1; /* 必要に応じて縮小を許可 */
+    padding: 0.5rem;
+    flex-wrap: nowrap;
   }
   
   .cert-img-1 {
-    width: clamp(4rem, 15vw, 6rem);
+    width: clamp(4rem, 15vw, 5rem);
+    max-width: none;
+    max-height: 6rem;
+    flex-shrink: 1;
+    object-fit: contain;
   }
   
   .cert-img-2 {
-    width: clamp(10rem, 35vw, 15rem);
+    width: clamp(10rem, 35vw, 12rem);
+    max-width: none;
+    max-height: 8rem;
+    flex-shrink: 1;
+    object-fit: contain;
+  }
+  
+  .cert-img-3 {
+    width: clamp(3rem, 12vw, 4rem);
+    max-width: none;
+    max-height: 5rem;
+    flex-shrink: 1;
+    object-fit: contain;
   }
   
   .contact-section {
