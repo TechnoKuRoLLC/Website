@@ -1,22 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM fully loaded");
-
+document.addEventListener('DOMContentLoaded', () => {
     // DOM要素の取得
-    const desktopHeader = document.querySelector(".desktop-header");
-    const mobileHeader = document.querySelector(".mobile-header");
-    const hamburgerMenu = document.getElementById("hamburgerMenu");
-    const menuBtn = document.getElementById("openMenu");
-    const closeBtn = document.getElementById("closeMenu");
-    const mobileNavItems = document.querySelectorAll(".mobile-nav-item");
-
-    console.log("Elements found:", {
-        desktopHeader: !!desktopHeader,
-        mobileHeader: !!mobileHeader,
-        hamburgerMenu: !!hamburgerMenu,
-        menuBtn: !!menuBtn,
-        closeBtn: !!closeBtn,
-        mobileNavItems: mobileNavItems.length
-    });
+    const desktopHeader = document.querySelector('.desktop-header');
+    const mobileHeader = document.querySelector('.mobile-header');
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const menuBtn = document.getElementById('openMenu');
+    const closeBtn = document.getElementById('closeMenu');
+    const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
 
     // レスポンシブ対応のための変数
     let isMobile = window.innerWidth < 768;
@@ -24,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let isDesktop = window.innerWidth >= 993;
 
     // fullPage.jsとLenisの変数
-    let fullpage_api;
+    let fullpageApi;
     let lenis;
 
     // ページ全体のスクロールを制御する関数
@@ -33,83 +22,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (allow) {
             // スクロールを有効にする
-            document.body.style.overflow = currentIsDesktop ? "hidden" : "auto";
-            document.documentElement.style.overflow = currentIsDesktop ? "hidden" : "auto";
+            document.body.style.overflow = currentIsDesktop ? 'hidden' : 'auto';
+            document.documentElement.style.overflow = currentIsDesktop ? 'hidden' : 'auto';
 
-            if (fullpage_api && typeof fullpage_api.setAllowScrolling === "function") {
-                fullpage_api.setAllowScrolling(true);
-                console.log("FullPage scrolling enabled");
+            if (fullpageApi && typeof fullpageApi.setAllowScrolling === 'function') {
+                fullpageApi.setAllowScrolling(true);
             }
-            if (lenis && typeof lenis.start === "function") {
+            if (lenis && typeof lenis.start === 'function') {
                 lenis.start();
-                console.log("Lenis scrolling started");
             }
         } else {
             // スクロールを無効にする
-            document.body.style.overflow = "hidden";
-            document.documentElement.style.overflow = "hidden";
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
 
-            if (fullpage_api && typeof fullpage_api.setAllowScrolling === "function") {
-                fullpage_api.setAllowScrolling(false);
-                console.log("FullPage scrolling disabled");
+            if (fullpageApi && typeof fullpageApi.setAllowScrolling === 'function') {
+                fullpageApi.setAllowScrolling(false);
             }
-            if (lenis && typeof lenis.stop === "function") {
+            if (lenis && typeof lenis.stop === 'function') {
                 lenis.stop();
-                console.log("Lenis scrolling stopped");
             }
         }
     }
 
     // Swiperの初期化
     function initSwiper() {
-        const swiperElement = document.querySelector(".blog-swiper");
-        if (swiperElement && typeof Swiper !== "undefined") {
+        const swiperElement = document.querySelector('.blog-swiper');
+        if (swiperElement && typeof Swiper !== 'undefined') {
             try {
-                new Swiper(".blog-swiper", {
+                new Swiper('.blog-swiper', {
                     slidesPerView: 1,
                     spaceBetween: 20,
                     loop: true,
                     pagination: {
-                        el: ".swiper-pagination",
+                        el: '.swiper-pagination',
                         clickable: true,
                     },
                     navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
                     },
                     breakpoints: {
                         640: { slidesPerView: 2, spaceBetween: 20 },
                         1024: { slidesPerView: 3, spaceBetween: 30 },
                     },
                 });
-                console.log("Swiper initialized successfully");
             } catch (error) {
-                console.error("Error initializing Swiper:", error);
+                console.error('Error initializing Swiper:', error);
             }
         }
     }
 
     // ヘッダーの表示/非表示を切り替える関数
     function toggleHeaderVisibility(sectionIndex) {
-        console.log("Toggling header visibility for section:", sectionIndex);
-
         // 全てのヘッダーを非表示
-        if (desktopHeader) desktopHeader.style.display = "none";
-        if (mobileHeader) mobileHeader.style.display = "none";
+        if (desktopHeader) desktopHeader.style.display = 'none';
+        if (mobileHeader) mobileHeader.style.display = 'none';
 
         // セクションに応じてヘッダーを表示
         if (sectionIndex === 0) {
             if (desktopHeader && isDesktop) {
-                desktopHeader.style.display = "block";
-                console.log("Desktop header displayed for hero section");
+                desktopHeader.style.display = 'block';
             } else if (mobileHeader) {
-                mobileHeader.style.display = "flex";
-                console.log("Mobile header displayed for hero section");
+                mobileHeader.style.display = 'flex';
             }
         } else {
             if (mobileHeader) {
-                mobileHeader.style.display = "flex";
-                console.log("Mobile header displayed for section:", sectionIndex);
+                mobileHeader.style.display = 'flex';
             }
         }
         updateMobileNavActive(sectionIndex);
@@ -119,42 +98,38 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateMobileNavActive(sectionIndex) {
         if (!mobileNavItems.length) return;
         mobileNavItems.forEach((item, index) => {
-            item.classList.toggle("active", index === sectionIndex);
+            item.classList.toggle('active', index === sectionIndex);
         });
     }
 
     // ハンバーガーメニューの制御
     function setupHamburgerMenu() {
         if (!menuBtn || !closeBtn || !hamburgerMenu) {
-            console.warn("Hamburger menu elements not found");
             return;
         }
-        
-        console.log("Setting up hamburger menu event listeners");
 
         // メニューを開く
-        menuBtn.addEventListener("click", (e) => {
+        menuBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            hamburgerMenu.style.display = "flex";
-            menuBtn.classList.add("active");
+            hamburgerMenu.style.display = 'flex';
+            menuBtn.classList.add('active');
             togglePageScroll(false);
         });
 
         // メニューを閉じる
-        closeBtn.addEventListener("click", (e) => {
+        closeBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            hamburgerMenu.style.display = "none";
-            menuBtn.classList.remove("active");
+            hamburgerMenu.style.display = 'none';
+            menuBtn.classList.remove('active');
             togglePageScroll(true);
         });
 
         // メニューリンクのクリック処理
-        const menuLinks = hamburgerMenu.querySelectorAll("a");
+        const menuLinks = hamburgerMenu.querySelectorAll('a');
         menuLinks.forEach((link) => {
-            link.addEventListener("click", () => {
-                console.log("Menu link clicked");
-                hamburgerMenu.style.display = "none";
-                menuBtn.classList.remove("active");
+            link.addEventListener('click', () => {
+                hamburgerMenu.style.display = 'none';
+                menuBtn.classList.remove('active');
                 togglePageScroll(true);
             });
         });
@@ -162,96 +137,86 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // fullPage.jsの初期化関数
     function initFullPage() {
-        const fullpageElement = document.getElementById("fullpage");
-        if (!fullpageElement || !isDesktop || typeof fullpage === "undefined") {
-            console.log("FullPage.js not initialized - missing element or not desktop");
+        const fullpageElement = document.getElementById('fullpage');
+        if (!fullpageElement || !isDesktop || typeof fullpage === 'undefined') {
             return;
         }
 
-        console.log("Initializing fullPage.js");
-
         // 既存のインスタンスをクリーンアップ
-        if (fullpage_api) {
+        if (fullpageApi) {
             try {
-                fullpage_api.destroy("all");
+                fullpageApi.destroy('all');
             } catch (error) {
-                console.warn("Error destroying fullPage.js:", error);
+                console.warn('Error destroying fullPage.js:', error);
             }
-            fullpage_api = null;
+            fullpageApi = null;
         }
 
         if (lenis) {
             try {
-                if (typeof lenis.destroy === "function") {
+                if (typeof lenis.destroy === 'function') {
                     lenis.destroy();
                 }
             } catch (error) {
-                console.warn("Error destroying Lenis:", error);
+                console.warn('Error destroying Lenis:', error);
             }
             lenis = null;
         }
 
         try {
-            fullpage_api = new fullpage("#fullpage", {
-                licenseKey: "",
+            fullpageApi = new fullpage('#fullpage', {
+                licenseKey: '',
                 autoScrolling: true,
                 scrollHorizontally: false,
                 navigation: false,
-                anchors: ["hero","philosophy","about", "service", "activity", "blog", "news", "contact", "footer"],
-                menu: "#menu",
+                anchors: ['hero','philosophy','about', 'service', 'activity', 'blog', 'news', 'contact', 'footer'],
+                menu: '#menu',
                 scrollOverflow: true,
-                normalScrollElements: ".hamburger-menu, .news-list, .swiper",
-                fixedElements: ".desktop-header, .mobile-header, .hamburger-menu, .mobile-nav",
+                normalScrollElements: '.hamburger-menu, .news-list, .swiper',
+                fixedElements: '.desktop-header, .mobile-header, .hamburger-menu, .mobile-nav',
                 responsiveWidth: 993,
                 afterLoad: (origin, destination, direction) => {
-                    console.log("Section loaded:", destination.index + 1);
                     updateSectionStyles(destination.index);
                     toggleHeaderVisibility(destination.index);
                 },
                 onLeave: (origin, destination, direction) => {
-                    console.log("Leaving section:", origin.index + 1, "to", destination.index + 1);
                     toggleHeaderVisibility(destination.index);
                     return true;
                 },
             });
 
             // セクションのオーバーフローを設定
-            document.querySelectorAll(".fp-section").forEach(section => {
-                section.style.overflowY = "auto";
+            document.querySelectorAll('.fp-section').forEach(section => {
+                section.style.overflowY = 'auto';
             });
-
-            console.log("fullPage.js initialized successfully");
         } catch (error) {
-            console.error("Error initializing fullPage.js:", error);
+            console.error('Error initializing fullPage.js:', error);
         }
     }
 
     // Lenisの初期化関数
     function initLenis() {
-        if (typeof Lenis === "undefined" || (!isMobile && !isTablet)) {
-            console.log("Lenis not initialized - library missing or not mobile/tablet");
+        if (typeof Lenis === 'undefined' || (!isMobile && !isTablet)) {
             return;
         }
 
-        console.log("Initializing Lenis");
-
         // 既存のインスタンスをクリーンアップ
-        if (fullpage_api) {
+        if (fullpageApi) {
             try {
-                fullpage_api.destroy("all");
+                fullpageApi.destroy('all');
             } catch (error) {
-                console.warn("Error destroying fullPage.js:", error);
+                console.warn('Error destroying fullPage.js:', error);
             }
-            fullpage_api = null;
+            fullpageApi = null;
         }
 
         if (lenis) {
             try {
-                if (typeof lenis.destroy === "function") {
+                if (typeof lenis.destroy === 'function') {
                     lenis.destroy();
                 }
             } catch (error) {
-                console.warn("Error destroying Lenis:", error);
+                console.warn('Error destroying Lenis:', error);
             }
             lenis = null;
         }
@@ -279,10 +244,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // スクロールイベントの処理
             let ticking = false;
-            window.addEventListener("scroll", () => {
+            window.addEventListener('scroll', () => {
                 if (!ticking) {
                     requestAnimationFrame(() => {
-                        const sections = document.querySelectorAll(".section");
+                        const sections = document.querySelectorAll('.section');
                         const scrollPosition = window.scrollY;
                         
                         sections.forEach((section, index) => {
@@ -300,28 +265,26 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             // セクションのオーバーフローを設定
-            document.querySelectorAll(".section").forEach(section => {
-                section.style.overflowY = "auto";
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.overflowY = 'auto';
             });
-
-            console.log("Lenis initialized successfully");
         } catch (error) {
-            console.error("Error initializing Lenis:", error);
+            console.error('Error initializing Lenis:', error);
         }
     }
 
     // セクションスタイルの更新
     function updateSectionStyles(index) {
-        const sections = document.querySelectorAll(".section");
+        const sections = document.querySelectorAll('.section');
         if (index >= 0 && index < sections.length) {
             const currentSection = sections[index];
-            const header = document.querySelector(".desktop-header");
+            const header = document.querySelector('.desktop-header');
             if (header) {
-                if (currentSection.classList.contains("service-section") || 
-                    currentSection.classList.contains("activity-section")) {
-                    header.style.color = "#000";
+                if (currentSection.classList.contains('service-section') || 
+                    currentSection.classList.contains('activity-section')) {
+                    header.style.color = '#000';
                 } else {
-                    header.style.color = "#fff";
+                    header.style.color = '#fff';
                 }
             }
         }
@@ -331,16 +294,14 @@ document.addEventListener("DOMContentLoaded", () => {
     function initCustomCursor() {
         if (isMobile || isTablet) return;
         
-        const cursor = document.getElementById("cursor");
+        const cursor = document.getElementById('cursor');
         if (!cursor) return;
-        
-        console.log("Initializing custom cursor");
 
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
 
         // マウス座標の更新
-        document.addEventListener("mousemove", (e) => {
+        document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
@@ -350,8 +311,8 @@ document.addEventListener("DOMContentLoaded", () => {
             cursorX += (mouseX - cursorX) * 0.1;
             cursorY += (mouseY - cursorY) * 0.1;
             
-            cursor.style.left = cursorX + "px";
-            cursor.style.top = cursorY + "px";
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
             
             requestAnimationFrame(updateCursor);
         }
@@ -359,31 +320,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // インタラクティブ要素のホバー効果
         const interactiveElements = document.querySelectorAll(
-            "a, button, .cta-button, .blog-card, .news-item, .swiper-button-next, .swiper-button-prev, .swiper-pagination-bullet, .c-carousel__btn-next, .c-carousel__btn-prev, .c-carousel__pagination-item"
+            'a, button, .cta-button, .blog-card, .news-item, .swiper-button-next, .swiper-button-prev, .swiper-pagination-bullet, .c-carousel__btn-next, .c-carousel__btn-prev, .c-carousel__pagination-item'
         );
 
         interactiveElements.forEach((element) => {
-            element.addEventListener("mouseenter", () => {
-                cursor.classList.add("cursor--hover");
+            element.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor--hover');
             });
-            element.addEventListener("mouseleave", () => {
-                cursor.classList.remove("cursor--hover");
+            element.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor--hover');
             });
         });
 
         // セクションごとのカーソルスタイル
-        const sections = document.querySelectorAll(".section");
+        const sections = document.querySelectorAll('.section');
         sections.forEach((section) => {
             const observer = new IntersectionObserver(
                 (entries) => {
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
-                            cursor.classList.remove("cursor-light", "cursor-dark");
-                            if (section.classList.contains("service-section") || 
-                                section.classList.contains("activity-section")) {
-                                cursor.classList.add("cursor-dark");
+                            cursor.classList.remove('cursor-light', 'cursor-dark');
+                            if (section.classList.contains('service-section') || 
+                                section.classList.contains('activity-section')) {
+                                cursor.classList.add('cursor-dark');
                             } else {
-                                cursor.classList.add("cursor-light");
+                                cursor.classList.add('cursor-light');
                             }
                         }
                     });
@@ -393,7 +354,7 @@ document.addEventListener("DOMContentLoaded", () => {
             observer.observe(section);
         });
 
-        cursor.style.opacity = "1";
+        cursor.style.opacity = '1';
     }
 
     // モバイルナビゲーションの設定
@@ -401,12 +362,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!mobileNavItems.length) return;
         
         mobileNavItems.forEach((item) => {
-            item.addEventListener("click", function (e) {
-                const href = this.getAttribute("href");
-                if (fullpage_api && href) {
+            item.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (fullpageApi && href) {
                     e.preventDefault();
                     const sectionIndex = Array.from(mobileNavItems).findIndex(navItem => navItem === this);
-                    fullpage_api.moveTo(href.replace("#", ""));
+                    fullpageApi.moveTo(href.replace('#', ''));
                     updateMobileNavActive(sectionIndex);
                 }
                 // Lenisの場合は通常のアンカーリンクとして動作
@@ -417,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // タイトルアニメーションの初期化
     function initTitleAnimations() {
         const targets = document.querySelectorAll(
-            ".section-title, .about-title, .service-title, .news-title, .contact-title"
+            '.section-title, .about-title, .service-title, .news-title, .contact-title'
         );
         if (!targets.length) return;
 
@@ -430,7 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const observerCallback = (entries, observer) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
+                    entry.target.classList.add('active');
                     observer.unobserve(entry.target);
                 }
             });
@@ -438,17 +399,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const observer = new IntersectionObserver(observerCallback, observerOptions);
         targets.forEach((target) => observer.observe(target));
-        console.log("Title animations observer initialized");
     }
 
     // サービスタイトル画像の表示アニメーション
     function initServiceTitleImageAnimation() {
         const serviceTitleImg = document.querySelector('.service-title img');
         if (serviceTitleImg) {
-            console.log("Service title image found, adding 'show' class.");
             serviceTitleImg.classList.add('show');
-        } else {
-            console.warn("Service title image (.service-title img) not found.");
         }
     }
 
@@ -461,13 +418,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 現在のセクションインデックスの取得
     function getCurrentSectionIndex() {
-        if (fullpage_api && fullpage_api.getActiveSection) {
-            const activeSection = fullpage_api.getActiveSection();
+        if (fullpageApi && fullpageApi.getActiveSection) {
+            const activeSection = fullpageApi.getActiveSection();
             return activeSection ? activeSection.index : 0;
         }
         
         // Lenisの場合やフォールバック
-        const sections = document.querySelectorAll(".section");
+        const sections = document.querySelectorAll('.section');
         const scrollPosition = window.scrollY;
         
         for (let i = 0; i < sections.length; i++) {
@@ -485,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ウィンドウのリサイズ時の処理
     let resizeTimeout;
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             const oldIsMobile = isMobile;
@@ -495,8 +452,6 @@ document.addEventListener("DOMContentLoaded", () => {
             updateResponsiveVariables();
 
             if (oldIsMobile !== isMobile || oldIsTablet !== isTablet || oldIsDesktop !== isDesktop) {
-                console.log("Window resized, reinitializing based on new dimensions");
-
                 if (isDesktop) {
                     initFullPage();
                 } else {
@@ -508,17 +463,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 toggleHeaderVisibility(currentSectionIndex);
 
                 // モバイルナビゲーションの表示/非表示
-                const mobileNav = document.querySelector(".mobile-nav");
+                const mobileNav = document.querySelector('.mobile-nav');
                 if (mobileNav) {
-                    mobileNav.style.display = isDesktop ? "none" : "flex";
+                    mobileNav.style.display = isDesktop ? 'none' : 'flex';
                 }
             }
 
             // ハンバーガーメニューを閉じる（デスクトップ表示時）
             if (window.innerWidth > 1024 && hamburgerMenu) {
-                if (hamburgerMenu.style.display === "flex") {
-                    hamburgerMenu.style.display = "none";
-                    if (menuBtn) menuBtn.classList.remove("active");
+                if (hamburgerMenu.style.display === 'flex') {
+                    hamburgerMenu.style.display = 'none';
+                    if (menuBtn) menuBtn.classList.remove('active');
                     togglePageScroll(true);
                 }
             }
@@ -526,25 +481,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // エラーハンドリング
-    window.addEventListener("error", (e) => {
-        console.error("JavaScript error:", e.message, "at", e.filename, ":", e.lineno);
+    window.addEventListener('error', (e) => {
+        console.error('JavaScript error:', e.message, 'at', e.filename, ':', e.lineno);
         // エラー発生時にスクロールを復旧
         try {
             togglePageScroll(true);
         } catch (recoveryError) {
-            console.error("Error during scroll recovery:", recoveryError);
+            console.error('Error during scroll recovery:', recoveryError);
         }
     });
 
     // Unhandled promise rejections
-    window.addEventListener("unhandledrejection", (e) => {
-        console.error("Unhandled promise rejection:", e.reason);
+    window.addEventListener('unhandledrejection', (e) => {
+        console.error('Unhandled promise rejection:', e.reason);
     });
 
     // 初期化処理
     function init() {
-        console.log("Initializing app");
-
         try {
             setupHamburgerMenu();
             setupMobileNav();
@@ -553,26 +506,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (isDesktop) {
                 initFullPage();
-                const mobileNav = document.querySelector(".mobile-nav");
-                if (mobileNav) mobileNav.style.display = "none";
+                const mobileNav = document.querySelector('.mobile-nav');
+                if (mobileNav) mobileNav.style.display = 'none';
             } else {
                 initLenis();
-                const mobileNav = document.querySelector(".mobile-nav");
-                if (mobileNav) mobileNav.style.display = "flex";
+                const mobileNav = document.querySelector('.mobile-nav');
+                if (mobileNav) mobileNav.style.display = 'flex';
             }
 
             initCustomCursor();
             toggleHeaderVisibility(0);
 
             // bodyとhtmlのoverflow初期設定
-            document.body.style.overflow = isDesktop ? "hidden" : "auto";
-            document.documentElement.style.overflow = isDesktop ? "hidden" : "auto";
+            document.body.style.overflow = isDesktop ? 'hidden' : 'auto';
+            document.documentElement.style.overflow = isDesktop ? 'hidden' : 'auto';
 
             initServiceTitleImageAnimation();
-
-            console.log("App initialization completed");
         } catch (error) {
-            console.error("Error during initialization:", error);
+            console.error('Error during initialization:', error);
         }
     }
 
