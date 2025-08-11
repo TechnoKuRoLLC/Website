@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Meta Tags -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="大小あらゆる規模のシステム開発に従事して20年以上。 国家資格「安全確保支援士」の知識と、元警察官の経験を活かして開発からISMS/Pマークまで攻守まとめてご支援します">
 <meta property="og:title" content="TechnoKuRo LLC.">
 <meta property="og:description" content="大小あらゆる規模のシステム開発に従事して20年以上。 国家資格「安全確保支援士」の知識と、元警察官の経験を活かして開発からISMS/Pマークまで攻守まとめてご支援します">
+<meta name="theme-color" content="#000">
+<meta name="manifest" content="/manifest.json">
 
-<title>Techno KuRo</title>
+<!-- Title -->
+<title>TechnoKuRo</title>
 
 <!-- External Libraries -->
 <!-- Swiper CSS -->
@@ -17,9 +21,6 @@
 <!-- Custom CSS -->
 <link rel="stylesheet" href="styles.css">
 
-<!-- パフォーマンス最適化 -->
-<!-- 重要でないCSSの遅延読み込み -->
-<link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 
 
@@ -40,29 +41,30 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-</head>
-<body>
-<!-- Custom Cursor -->
-<div id="cursor" class="cursor"></div>
-
-<!-- CSPヘッダー／セキュリティ強化 -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.jquery.com https://cdn.jsdelivr.net;">
-
-<!-- フォールバック用のローカルライブラリ -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-3.7.1.min.js"><\/script>')</script>
 
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#000">
+
+<!-- Fallback Script for jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-3.7.1.min.js"><\/script>')</script>
+
+ <!-- Security Header -->
+ <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://code.jquery.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://use.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://use.fontawesome.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;">
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div id="cursor" class="cursor"></div>
 
 
 <!-- Hamburger Menu (Hidden by default) -->
 <div class="hamburger-menu" id="hamburgerMenu">
   <div class="hamburger-header">
-    <a href="/" class="logo">
+    <a href="/" class="logo" aria-label="TechnoKuRoホームページに戻る">
       <img src="./img/KuRoLogoCircle512.png" alt="TechnoKuRo logo" class="logo-circle">
     </a>
-    <button class="close-btn" id="closeMenu">×</button>
+    <button class="close-btn" id="closeMenu" aria-label="メニューを閉じる">×</button>
   </div>
   <nav class="hamburger-nav">
     <ul>
@@ -79,7 +81,6 @@
     <div class="social-icons">
       <a href="#" class="social-icon" aria-label="LINE">
         <img src="./img/sns_line.png" alt="LINE">
-        </svg>
       </a>
       <a href="#" class="social-icon" aria-label="X (Twitter)">
         <img src="./img/sns_x.png" alt="X">
@@ -91,7 +92,7 @@
 <!-- Desktop Header -->
 <header class="desktop-header">
   <div class="container">
-    <a href="/" class="logo">
+    <a href="/" class="logo" aria-label="TechnoKuRoホームページに戻る">
       <img src="./img/KuRoLogoCircle512.png" alt="TechnoKuRo logo" class="logo-circle">
     </a>
     <nav class="main-nav">
@@ -113,14 +114,13 @@
           <img src="./img/sns_x.png" alt="X">
         </a>
       </div>
-
     </div>
   </div>
 </header>
 
 <!-- Mobile Header -->
 <header class="mobile-header">
-  <a href="/" class="logo">
+  <a href="/" class="logo" aria-label="TechnoKuRoホームページに戻る">
     <img src="./img/KuRoLogoCircle512.png" alt="TechnoKuRo logo" class="logo-circle">
   </a>
   <div class="mobile-actions">
@@ -276,7 +276,7 @@
         
         <div class="button01">
           <div class="reverse">
-            <a href="service.html">OUR SERVICE &gt;</a>
+            <a href="service.html" aria-label="サービス詳細ページに移動">OUR SERVICE &gt;</a>
           </div>
         </div>
       </div>
@@ -302,7 +302,6 @@
         <!-- Freelance Engineer -->
         <div class="act-item">
           <div class="act-details">
-            <!-- <div class="act-title-container"> -->
             <div class="act-number"><span>01</span></div>
             <div class="act-texts">
               <h3 class="act-details-title">
@@ -323,54 +322,70 @@
           </div>
         </div>
 
-        <h3 class="lineoc-merit">｛ フリーランスエンジニアOCの良いところ <div class="activity-number">6</div>選 ｝</h2>
+        <h3 class="lineoc-merit">｛ フリーランスエンジニアOCの良いところ <div class="activity-number">6</div>選 ｝</h3>
 
         <div class="features-grid">
           <div class="feature-item">
-            <div class="feature-icon"><img src="./img/line-1.png" alt="LINE オープンチャットフリーランスエンジニア　LINE OC オプチャ"></div>
-            <div class="feature-title">実務に直結するリアルな情報交換</div>
+            <div class="feature-icon">
+              <img src="./img/line-1.png" alt="LINE オープンチャットフリーランスエンジニア　LINE OC オプチャ">
+            </div>
+            <div class="feature-title">幅広い情報のキャッチアップ</div>
             <div class="feature-description">
-              インフラ・設計・開発・保守・運用、経験者・既存技術の共有等の蓄積を利用してキャリアアップを目指せます。
+              技術トラブル、IT関連の情報共有、開業届や確定申告など税務まわり等々。<br>
+              情報の幅が広く、1人フリーランスでは拾えない知見が手に入ります。モチベーション維持にも役立ちます。
             </div>
           </div>
 
           <div class="feature-item">
-            <div class="feature-icon"><img src="./img/line-2.png" alt="メンバー同士の温かいサポート"></div>
+            <div class="feature-icon">
+              <img src="./img/line-2.png" alt="メンバー同士の温かいサポート">
+            </div>
             <div class="feature-title">メンバー同士の温かいサポート</div>
             <div class="feature-description">
-              毎週月曜日は22:00から、熱いライブトークを実施中！皆さんも是非参加してみましょう、楽しく交流しよう。
+              初心者・新規参加者の質問にもしっかり反応があり、優しい対応が多いです。返答率なんと94.1%。<br>
+              キャリアに不安を抱える人への励ましや、実践的なアドバイスも活発です。
             </div>
           </div>
 
           <div class="feature-item">
-            <div class="feature-icon"><img src="./img/line-3.png" alt="フリーランスならではの課題と戦略共有"></div>
-            <div class="feature-title">フリーランスならではの課題と戦略共有</div>
+            <div class="feature-icon">
+              <img src="./img/line-5.png" alt="ライブトーク">
+            </div>
+            <div class="feature-title">ステマなしの生の声が聞ける</div>
             <div class="feature-description">
-              毎週月曜日は22:00から、熱いライブトークを実施中！皆さんも是非参加してみましょう、楽しく交流しよう。
+              匿名・非営利・即時性という構造上、ステマや営業目的での発言はすぐに見抜かれる空気感があります。<br>
+              良いところも悪いところも話題に出る。だからこそ参考になる。
             </div>
           </div>
 
           <div class="feature-item">
-            <div class="feature-icon"><img src="./img/line-4.png" alt="オフ会やリアルな交流も盛ん"></div>
-            <div class="feature-title">オフ会やリアルな交流も盛ん</div>
+            <div class="feature-icon">
+              <img src="./img/line-3.png" alt="フリーランスならではの課題と戦略共有">
+            </div>
+            <div class="feature-title">フリーランスならではの課題や相談ができる</div>
             <div class="feature-description">
-              総合オフ会を行ったり、その方法を教えてもらったりと良い感じで盛り上がっています。
+              単価や営業の悩み、エージェントとの関係性や「いつ切られるかわからない不安」といったフリーランス特有の悩みがオープンに語られます。相談しづらい内容も匿名だからこそしやすい◎
             </div>
           </div>
 
           <div class="feature-item">
-            <div class="feature-icon"><img src="./img/line-5.png" alt="ライブトーク"></div>
-            <div class="feature-title">ライブトーク</div>
+            <div class="feature-icon">
+              <img src="./img/line-4.png" alt="オフ会やリアルな交流も盛ん">
+            </div>
+            <div class="feature-title">オフ会やライブトークなど、交流も盛ん♪</div>
             <div class="feature-description">
-              毎週月曜日は22:00から、熱いライブトークを実施中！皆さんも是非参加してみましょう、楽しく交流しよう。
+              月1くらいの頻度でオフ会も企画されており、リアルなつながりも広がっています。<br>
+              毎週月曜日 22:00から、ライブトークも実施中！皆さんも是非参加してみましょう
             </div>
           </div>
 
           <div class="feature-item">
-            <div class="feature-icon"><img src="./img/line-6.png" alt="Youtube"></div>
+            <div class="feature-icon">
+              <img src="./img/line-6.png" alt="Youtube">
+            </div>
             <div class="feature-title">Youtube</div>
             <div class="feature-description">
-              毎週月曜日は22:00から、熱いライブトークを実施中！皆さんも是非参加してみましょう、楽しく交流しよう。
+              記入お願いします記入お願いします記入お願いします記入お願いします記入お願いします記入お願いします記入お願いします記入お願いします
             </div>
           </div>
         </div>
@@ -386,7 +401,7 @@
         <div class="line-cta">
           <div class="button02">
             <div class="reverse">
-              <a href="service.html">JOIN LINE OPENCHAT &gt;</a>
+              <a href="service.html" aria-label="LINEオープンチャットに参加">JOIN LINE OPENCHAT &gt;</a>
             </div>
           </div>
         </div>
@@ -410,7 +425,7 @@
               </p>
               <div class="button02">
                 <div class="reverse">
-                  <a href="#">JOIN EngineerExpress &gt;</a>
+                  <a href="#" aria-label="EngineerExpressに参加">JOIN EngineerExpress &gt;</a>
                 </div>
               </div>
             </div>
@@ -463,9 +478,9 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination" aria-label="ブログ記事スライダーのページ番号"></div>
+          <div class="swiper-button-next" aria-label="次のブログ記事"></div>
+          <div class="swiper-button-prev" aria-label="前のブログ記事"></div>
         </div>
       </div>
     </div>
@@ -487,21 +502,26 @@
         <div class="dark-line"></div>
         <div class="news-list">
           <div class="news-item">
-            <div class="news-meta"><span class="news-date">2025.04.15</span>
-            <span class="news-tag">{NEWS}</span></div>
+            <div class="news-meta">
+              <span class="news-date">2025.04.15</span>
+              <span class="news-tag">{NEWS}</span>
+            </div>
             <span class="news-content">HPリニューアルHPリニューアルHPリニューアル</span>
           </div>
           <div class="news-item">
-            <div class="news-meta"><span class="news-date">2025.04.15</span>
-            <span class="news-tag">{NEWS}</span></div>
+            <div class="news-meta">
+              <span class="news-date">2025.04.15</span>
+              <span class="news-tag">{NEWS}</span>
+            </div>
             <span class="news-content">HPリニューアル</span>
           </div>
           <div class="news-item">
-            <div class="news-meta"><span class="news-date">2025.04.15</span>
-            <span class="news-tag">{NEWS}</span></div>
+            <div class="news-meta">
+              <span class="news-date">2025.04.15</span>
+              <span class="news-tag">{NEWS}</span>
+            </div>
             <span class="news-content">HPリニューアル</span>
           </div>
-
         </div>
       </div>
     </div>
@@ -519,7 +539,7 @@
     
     <div class="fp-overflow">
       <div class="container">
-        <a href="/contact" class="contact-link">Contact Techno KuRo
+        <a href="/contact" class="contact-link" aria-label="お問い合わせページに移動">Contact Techno KuRo
           <div class="lineArrow"></div>
         </a>
       </div>
@@ -531,35 +551,36 @@
     <div class="footer-links">
       <!-- Follow me セクション -->
       <div class="follow-section">
-          <span>▶︎ Follow me</span>
-          <div class="social-icons">
-              <!-- LINEアイコン -->
-              <a href="#" class="social-icon" aria-label="LINE">
-                <img src="./img/sns_line.png" alt="LINE">
-              </a>
-
-             
-              <!-- Xアイコン -->
-              <a href="#" class="social-icon" aria-label="X (Twitter)">
-                <img src="./img/sns_x.png" alt="X">
-              </a>
-          </div>
+        <span>▶︎ Follow me</span>
+        <div class="social-icons">
+          <!-- LINEアイコン -->
+          <a href="#" class="social-icon" aria-label="LINE">
+            <img src="./img/sns_line.png" alt="LINE">
+          </a>
+          <!-- Xアイコン -->
+          <a href="#" class="social-icon" aria-label="X (Twitter)">
+            <img src="./img/sns_x.png" alt="X">
+          </a>
+        </div>
       </div>
 
       <!-- ポリシーリンク -->
       <div class="policy-links">
-          <a href="#">Cookie Policy</a>
-          <a href="#">Privacy Policy</a>
-          ©Techno KuRo Co.Ltd.
+        <a href="#" aria-label="Cookie Policyページに移動">Cookie Policy</a>
+        <a href="#" aria-label="Privacy Policyページに移動">Privacy Policy</a>
+        ©Techno KuRo Co.Ltd.
       </div>
+    </div>
   </div>
 </div>
 
-</div>
-
-<!-- Scripts -->
+<!-- External JavaScript Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/dist/lenis.min.js"></script>
+<!-- Custom JavaScript -->
 <script src="script.js"></script>
 </body>
 </html>
